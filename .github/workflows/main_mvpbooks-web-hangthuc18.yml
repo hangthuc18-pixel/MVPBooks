@@ -26,11 +26,11 @@ jobs:
       - name: Restore
         run: dotnet restore MVPBooks/MVPBooks.csproj
 
-      - name: Build
-        run: dotnet build MVPBooks/MVPBooks.csproj --configuration Release --no-restore
+      - name: Build with dotnet
+        run: dotnet build MVPBooks/MVPBooks.csproj --configuration Release
 
-      - name: Publish
-        run: dotnet publish MVPBooks/MVPBooks.csproj --configuration Release --no-build -o "${{ env.DOTNET_ROOT }}/myapp"
+      - name: dotnet publish
+        run: dotnet publish MVPBooks/MVPBooks.csproj -c Release -o "${{env.DOTNET_ROOT}}/myapp"
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4

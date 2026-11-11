@@ -1,0 +1,18 @@
+# Build outputs
+**/bin/
+**/obj/
+.vs/
+**/.vs/
+
+# User-specific files
+*.user
+*.suo
+
+# Local secrets and publish profiles
+appsettings.Local.json
+Properties/PublishProfiles/
+*.publishsettings
+
+# OS/editor files
+.DS_Store
+Thumbs.db

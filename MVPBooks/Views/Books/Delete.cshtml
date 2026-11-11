@@ -1,0 +1,38 @@
+
+@model MVPBooks.Models.Book
+
+@{
+    ViewData["Title"] = "Xóa sách";
+}
+
+<div class="container mt-4">
+    <h2>Xóa sách</h2>
+
+    <div class="alert alert-warning mt-3">
+        Bạn có chắc chắn muốn xóa sách này không?
+    </div>
+
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <h5>@Model.Name</h5>
+
+            <p><strong>Mã sách:</strong> @Model.Code</p>
+            <p><strong>Tác giả:</strong> @Model.Author</p>
+            <p><strong>Thể loại:</strong> @Model.Category</p>
+            <p><strong>Số lượng:</strong> @Model.Quantity</p>
+
+            <form asp-action="Delete" method="post"
+      onsubmit="return confirm('Bạn có chắc chắn muốn xóa sách này không?');">
+                <input type="hidden" asp-for="Id" />
+
+                <button type="submit" class="btn btn-danger">
+                    Xác nhận xóa
+                </button>
+
+                <a asp-action="Index" class="btn btn-secondary">
+                    Hủy
+                </a>
+            </form>
+        </div>
+    </div>
+</div>
